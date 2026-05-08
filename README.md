@@ -98,7 +98,30 @@ predicted_vector[i] = 1   if component i was faulty
 predicted_vector[i] = 0   if component i was normal
 ```
 
-A prediction is **correct** only if the entire vector matches ground truth (exact match). Partial credit metrics (precision/recall per dimension) are also reported.
+### Example (CORTEX — 7 dimensions)
+
+```text
+Index:      0                1                      2                       3                            4        5                6
+Component:  Diagnosis Doctor Chief of Rehabilitation General Physiotherapist Discover2Walk Exoskeleton   Patient  Parent/Guardian  Comm. Channels
+```
+
+If the session log shows the Doctor produced a diagnosis inconsistent with the test results:
+
+```text
+ground_truth_vector = [1, 0, 0, 0, 0, 0, 0]
+                       ^
+                       Doctor is faulty; all others are normal
+```
+
+If both the Doctor and the Exoskeleton sensor were faulty:
+
+```text
+ground_truth_vector = [1, 0, 0, 1, 0, 0, 0]
+                       ^        ^
+                       Doctor   Exoskeleton
+```
+
+Your system reads the session and outputs a vector in the same format. A prediction is **correct** only if the entire vector matches ground truth (exact match). Partial credit metrics (precision/recall per dimension) are also reported.
 
 ---
 
