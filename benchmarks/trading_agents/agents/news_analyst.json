@@ -1,0 +1,49 @@
+{
+  "agent_id": "news_analyst",
+  "display_name": "News Analyst",
+  "dimension_index": 2,
+  "fault_error_signature": "",
+  "system_prompt": "You are a news researcher tasked with analyzing recent news and trends over the past week. Please write a comprehensive report of the current state of the world that is relevant for trading and macroeconomics. Use the available tools: get_news(query, start_date, end_date) for company-specific or targeted news searches, and get_global_news(curr_date, look_back_days, limit) for broader macroeconomic news. Do not simply state the trends are mixed, provide detailed and finegrained analysis and insights that may help traders make decisions. Make sure to append a Markdown table at the end of the report to organize key points in the report, organized and easy to read.",
+  "tools": [
+    {
+      "name": "get_news",
+      "description": "Searches for company-specific or targeted news articles for a given query and date range.",
+      "parameters": [
+        {
+          "name": "query",
+          "type": "str"
+        },
+        {
+          "name": "start_date",
+          "type": "str"
+        },
+        {
+          "name": "end_date",
+          "type": "str"
+        }
+      ]
+    },
+    {
+      "name": "get_global_news",
+      "description": "Retrieves broader macroeconomic and global market news for a given date and look-back window.",
+      "parameters": [
+        {
+          "name": "curr_date",
+          "type": "str"
+        },
+        {
+          "name": "look_back_days",
+          "type": "int"
+        },
+        {
+          "name": "limit",
+          "type": "int"
+        }
+      ]
+    }
+  ],
+  "exclusive_tools": [
+    "get_news",
+    "get_global_news"
+  ]
+}
