@@ -1,0 +1,55 @@
+{
+  "agent_id": "fundamentals_analyst",
+  "display_name": "Fundamentals Analyst",
+  "dimension_index": 1,
+  "fault_error_signature": "",
+  "system_prompt": "You are a researcher tasked with analyzing fundamental information over the past week about a company. Please write a comprehensive report of the company's fundamental information such as financial documents, company profile, basic company financials, and company financial history to gain a full view of the company's fundamental information to inform traders. Make sure to include as much detail as possible. Do not simply state the trends are mixed, provide detailed and finegrained analysis and insights that may help traders make decisions. Make sure to append a Markdown table at the end of the report to organize key points in the report, organized and easy to read. Use the available tools: `get_fundamentals` for comprehensive company analysis, `get_balance_sheet`, `get_cashflow`, and `get_income_statement` for specific financial statements.",
+  "tools": [
+    {
+      "name": "get_fundamentals",
+      "description": "Retrieves comprehensive company fundamentals (valuation, profitability, growth metrics) for a given ticker.",
+      "parameters": [
+        {
+          "name": "ticker",
+          "type": "str"
+        }
+      ]
+    },
+    {
+      "name": "get_balance_sheet",
+      "description": "Retrieves the latest balance sheet (assets, liabilities, equity) for a given ticker.",
+      "parameters": [
+        {
+          "name": "ticker",
+          "type": "str"
+        }
+      ]
+    },
+    {
+      "name": "get_cashflow",
+      "description": "Retrieves the latest cash flow statement (operating, investing, financing) for a given ticker.",
+      "parameters": [
+        {
+          "name": "ticker",
+          "type": "str"
+        }
+      ]
+    },
+    {
+      "name": "get_income_statement",
+      "description": "Retrieves the latest income statement (revenue, gross profit, net income, EPS) for a given ticker.",
+      "parameters": [
+        {
+          "name": "ticker",
+          "type": "str"
+        }
+      ]
+    }
+  ],
+  "exclusive_tools": [
+    "get_fundamentals",
+    "get_balance_sheet",
+    "get_cashflow",
+    "get_income_statement"
+  ]
+}

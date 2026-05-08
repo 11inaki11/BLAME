@@ -1,0 +1,7 @@
+case_id,predicted_vector
+trading_session_2,"0,0,1,0,0,0,0,0,1,0,0,0,0,0,0"
+trading_session_3,"0,1,0,1,1,0,0,1,1,1,0,0,1,0,0"
+trading_session_6,"1,0,1,1,1,0,1,0,1,0,1,1,0,0,0"
+trading_session_7,"0,1,0,0,0,1,1,1,1,0,1,1,0,1,0"
+trading_session_8,"0,0,0,1,1,1,0,1,0,0,0,1,1,1,0"
+trading_session_9,"0,1,0,1,1,1,0,1,0,0,1,1,1,1,0"
